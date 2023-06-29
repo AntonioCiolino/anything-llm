@@ -109,9 +109,18 @@ async function chatWithWorkspace(workspace, message, chatMode = "chat") {
       error: null,
     };
   } else {
+<<<<<<< HEAD
     var chat_memory = workspace?.openAiHistory;
     console.debug(chat_memory);
     const rawHistory = await WorkspaceChats.forWorkspace(workspace.id, chat_memory);
+=======
+    var messageLimit = workspace?.openAiHistory;
+
+    const rawHistory = await WorkspaceChats.forWorkspace(
+      workspace.id,
+      messageLimit
+    );
+>>>>>>> upstream/master
     const chatHistory = convertToPromptHistory(rawHistory);
     const {
       response,
